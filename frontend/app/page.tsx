@@ -225,8 +225,8 @@ export default function Home() {
                   REAL RAILS • CASH ACCESS INTELLIGENCE SYSTEM
                 </p>
                 <h1 className="mt-1 text-2xl font-black">Cash Access Intelligence Platform</h1>
-                <p className="mt-1 text-xs text-slate-400">
-                  Live Infrastructure Intelligence • Synthetic Data Simulation Active • {points.length} access points
+                <p className="text-sm text-gray-400">
+                  Live Infrastructure Intelligence • <span className="text-yellow-400 font-medium">Synthetic Data Simulation Active</span> • {points.length} access points
                 </p>
               </div>
 
