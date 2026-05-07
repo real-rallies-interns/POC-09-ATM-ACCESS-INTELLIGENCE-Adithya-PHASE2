@@ -214,6 +214,40 @@ export default function Home() {
       ? `Improve cash access density in ${weakerArea.area} through targeted ATM placement.`
       : `Maintain monitoring in ${weakerArea.area}; access is currently acceptable.`;
 
+  const downloadSampleData = () => {
+  const sampleData = {
+    project: "Cash Access Intelligence Platform",
+    data_label: "synthetic_mock_data",
+    generated_from: dataMode,
+    exported_at: new Date().toISOString(),
+    selected_comparison: {
+      areaA,
+      areaB,
+      intervention_priority: priorityLabel,
+    },
+    area_reports: {
+      [areaA]: areaAReport,
+      [areaB]: areaBReport,
+    },
+    total_access_points_loaded: points.length,
+    sample_access_points: points.slice(0, 25),
+    note: "This export contains synthetic sample data for academic PoC and dashboard demonstration only.",
+  };
+
+  const blob = new Blob([JSON.stringify(sampleData, null, 2)], {
+    type: "application/json",
+  });
+
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = "cash_access_sample_data.json";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  URL.revokeObjectURL(url);
+};
+
   return (
     <main className="h-screen bg-[#030712] text-white grid grid-cols-[1fr_390px] overflow-hidden">
       <section className="relative border-r border-cyan-400/10">
@@ -386,6 +420,21 @@ export default function Home() {
             Banks, ATM deployers, regulators, and local planners shape the physical cash access network.
           </p>
         </section>
+        <section className="info-card mt-5 mb-6 border-cyan-400/30">
+  <h3 className="text-lg font-bold text-cyan-300">Sample Data Export</h3>
+
+  <p className="mt-3 leading-7 text-slate-300">
+    Download a sample JSON file from the active synthetic infrastructure dataset
+    and current comparison state.
+  </p>
+
+  <button
+    onClick={downloadSampleData}
+    className="mt-4 w-full rounded-xl border border-cyan-400/30 bg-cyan-400/10 px-4 py-3 text-sm font-bold text-cyan-300 transition hover:bg-cyan-400/20 hover:text-cyan-100"
+  >
+    Download Sample Data
+  </button>
+</section>
       </aside>
     </main>
   );
