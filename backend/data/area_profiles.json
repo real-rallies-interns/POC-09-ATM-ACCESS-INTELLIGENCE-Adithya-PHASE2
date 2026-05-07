@@ -1,0 +1,211 @@
+[
+  {
+    "area": "Delhi",
+    "area_id": "DEL",
+    "state": "Delhi",
+    "region": "North",
+    "populationPressure": 91,
+    "travelBurden": 4.8,
+    "incomeFriction": 42,
+    "scenario_label": "dense_metro",
+    "data_label": "synthetic_mock_data"
+  },
+  {
+    "area": "Mumbai",
+    "area_id": "MUM",
+    "state": "Maharashtra",
+    "region": "West",
+    "populationPressure": 94,
+    "travelBurden": 5.2,
+    "incomeFriction": 48,
+    "scenario_label": "dense_metro",
+    "data_label": "synthetic_mock_data"
+  },
+  {
+    "area": "Bengaluru",
+    "area_id": "BLR",
+    "state": "Karnataka",
+    "region": "South",
+    "populationPressure": 82,
+    "travelBurden": 4.1,
+    "incomeFriction": 36,
+    "scenario_label": "tech_metro",
+    "data_label": "synthetic_mock_data"
+  },
+  {
+    "area": "Chennai",
+    "area_id": "CHE",
+    "state": "Tamil Nadu",
+    "region": "South",
+    "populationPressure": 78,
+    "travelBurden": 5.8,
+    "incomeFriction": 44,
+    "scenario_label": "metro",
+    "data_label": "synthetic_mock_data"
+  },
+  {
+    "area": "Hyderabad",
+    "area_id": "HYD",
+    "state": "Telangana",
+    "region": "South",
+    "populationPressure": 76,
+    "travelBurden": 5.4,
+    "incomeFriction": 41,
+    "scenario_label": "metro",
+    "data_label": "synthetic_mock_data"
+  },
+  {
+    "area": "Kolkata",
+    "area_id": "KOL",
+    "state": "West Bengal",
+    "region": "East",
+    "populationPressure": 84,
+    "travelBurden": 6.2,
+    "incomeFriction": 52,
+    "scenario_label": "legacy_metro",
+    "data_label": "synthetic_mock_data"
+  },
+  {
+    "area": "Kochi",
+    "area_id": "KOC",
+    "state": "Kerala",
+    "region": "South",
+    "populationPressure": 58,
+    "travelBurden": 3.8,
+    "incomeFriction": 28,
+    "scenario_label": "medium_city",
+    "data_label": "synthetic_mock_data"
+  },
+  {
+    "area": "Ahmedabad",
+    "area_id": "AMD",
+    "state": "Gujarat",
+    "region": "West",
+    "populationPressure": 72,
+    "travelBurden": 5.6,
+    "incomeFriction": 39,
+    "scenario_label": "industrial_city",
+    "data_label": "synthetic_mock_data"
+  },
+  {
+    "area": "Jaipur",
+    "area_id": "JAI",
+    "state": "Rajasthan",
+    "region": "North",
+    "populationPressure": 68,
+    "travelBurden": 6.7,
+    "incomeFriction": 46,
+    "scenario_label": "tourism_city",
+    "data_label": "synthetic_mock_data"
+  },
+  {
+    "area": "Lucknow",
+    "area_id": "LKO",
+    "state": "Uttar Pradesh",
+    "region": "North",
+    "populationPressure": 81,
+    "travelBurden": 7.2,
+    "incomeFriction": 55,
+    "scenario_label": "underserved_urban",
+    "data_label": "synthetic_mock_data"
+  },
+  {
+    "area": "Guwahati",
+    "area_id": "GAU",
+    "state": "Assam",
+    "region": "North East",
+    "populationPressure": 73,
+    "travelBurden": 8.4,
+    "incomeFriction": 61,
+    "scenario_label": "high_travel_burden",
+    "data_label": "synthetic_mock_data"
+  },
+  {
+    "area": "Patna",
+    "area_id": "PAT",
+    "state": "Bihar",
+    "region": "East",
+    "populationPressure": 89,
+    "travelBurden": 8.8,
+    "incomeFriction": 64,
+    "scenario_label": "underserved_urban",
+    "data_label": "synthetic_mock_data"
+  },
+  {
+    "area": "Bhopal",
+    "area_id": "BHO",
+    "state": "Madhya Pradesh",
+    "region": "Central",
+    "populationPressure": 66,
+    "travelBurden": 7.4,
+    "incomeFriction": 49,
+    "scenario_label": "moderate_access",
+    "data_label": "synthetic_mock_data"
+  },
+  {
+    "area": "Bhubaneswar",
+    "area_id": "BBI",
+    "state": "Odisha",
+    "region": "East",
+    "populationPressure": 63,
+    "travelBurden": 7.9,
+    "incomeFriction": 54,
+    "scenario_label": "moderate_access",
+    "data_label": "synthetic_mock_data"
+  },
+  {
+    "area": "Srinagar",
+    "area_id": "SRI",
+    "state": "Jammu and Kashmir",
+    "region": "North",
+    "populationPressure": 60,
+    "travelBurden": 9.2,
+    "incomeFriction": 57,
+    "scenario_label": "terrain_access_risk",
+    "data_label": "synthetic_mock_data"
+  },
+  {
+    "area": "Ranchi",
+    "area_id": "RAN",
+    "state": "Jharkhand",
+    "region": "East",
+    "populationPressure": 69,
+    "travelBurden": 8.1,
+    "incomeFriction": 59,
+    "scenario_label": "underserved_urban",
+    "data_label": "synthetic_mock_data"
+  },
+  {
+    "area": "ZeroATM Nagar",
+    "area_id": "ZAN",
+    "state": "Synthetic State",
+    "region": "Edge Case",
+    "populationPressure": 85,
+    "travelBurden": 12.0,
+    "incomeFriction": 70,
+    "scenario_label": "edge_no_atm",
+    "data_label": "synthetic_mock_data"
+  },
+  {
+    "area": "BankOnly Puram",
+    "area_id": "BOP",
+    "state": "Synthetic State",
+    "region": "Edge Case",
+    "populationPressure": 70,
+    "travelBurden": 10.5,
+    "incomeFriction": 58,
+    "scenario_label": "edge_bank_only",
+    "data_label": "synthetic_mock_data"
+  },
+  {
+    "area": "Remote Gap Block",
+    "area_id": "RGB",
+    "state": "Synthetic State",
+    "region": "Edge Case",
+    "populationPressure": 62,
+    "travelBurden": 14.0,
+    "incomeFriction": 75,
+    "scenario_label": "edge_remote_high_distance",
+    "data_label": "synthetic_mock_data"
+  }
+]

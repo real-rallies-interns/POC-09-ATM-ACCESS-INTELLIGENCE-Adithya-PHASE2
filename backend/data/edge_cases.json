@@ -1,0 +1,34 @@
+[
+  {
+    "edge_case_id": "EDGE-001",
+    "synthetic_label": "SYNTHETIC_EDGE_CASE",
+    "area": "ZeroATM Nagar",
+    "issue_type": "no_atm_available",
+    "expected_behavior": "Coverage should remain low and system should not crash when ATM count is zero.",
+    "data_label": "synthetic_mock_data"
+  },
+  {
+    "edge_case_id": "EDGE-002",
+    "synthetic_label": "SYNTHETIC_EDGE_CASE",
+    "area": "BankOnly Puram",
+    "issue_type": "bank_only_area",
+    "expected_behavior": "Bank count exists but nearest ATM burden should remain high.",
+    "data_label": "synthetic_mock_data"
+  },
+  {
+    "edge_case_id": "EDGE-003",
+    "synthetic_label": "SYNTHETIC_EDGE_CASE",
+    "area": "Remote Gap Block",
+    "issue_type": "remote_high_travel_burden",
+    "expected_behavior": "Area should be classified as underserved or financial desert.",
+    "data_label": "synthetic_mock_data"
+  },
+  {
+    "edge_case_id": "EDGE-004",
+    "synthetic_label": "SYNTHETIC_EDGE_CASE",
+    "area": "Delhi",
+    "issue_type": "temporary_outage",
+    "expected_behavior": "Temporarily unavailable ATM should not be treated as strong access.",
+    "data_label": "synthetic_mock_data"
+  }
+]

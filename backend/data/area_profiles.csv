@@ -1,0 +1,20 @@
+area,area_id,state,region,populationPressure,travelBurden,incomeFriction,scenario_label,data_label
+Delhi,DEL,Delhi,North,91,4.8,42,dense_metro,synthetic_mock_data
+Mumbai,MUM,Maharashtra,West,94,5.2,48,dense_metro,synthetic_mock_data
+Bengaluru,BLR,Karnataka,South,82,4.1,36,tech_metro,synthetic_mock_data
+Chennai,CHE,Tamil Nadu,South,78,5.8,44,metro,synthetic_mock_data
+Hyderabad,HYD,Telangana,South,76,5.4,41,metro,synthetic_mock_data
+Kolkata,KOL,West Bengal,East,84,6.2,52,legacy_metro,synthetic_mock_data
+Kochi,KOC,Kerala,South,58,3.8,28,medium_city,synthetic_mock_data
+Ahmedabad,AMD,Gujarat,West,72,5.6,39,industrial_city,synthetic_mock_data
+Jaipur,JAI,Rajasthan,North,68,6.7,46,tourism_city,synthetic_mock_data
+Lucknow,LKO,Uttar Pradesh,North,81,7.2,55,underserved_urban,synthetic_mock_data
+Guwahati,GAU,Assam,North East,73,8.4,61,high_travel_burden,synthetic_mock_data
+Patna,PAT,Bihar,East,89,8.8,64,underserved_urban,synthetic_mock_data
+Bhopal,BHO,Madhya Pradesh,Central,66,7.4,49,moderate_access,synthetic_mock_data
+Bhubaneswar,BBI,Odisha,East,63,7.9,54,moderate_access,synthetic_mock_data
+Srinagar,SRI,Jammu and Kashmir,North,60,9.2,57,terrain_access_risk,synthetic_mock_data
+Ranchi,RAN,Jharkhand,East,69,8.1,59,underserved_urban,synthetic_mock_data
+ZeroATM Nagar,ZAN,Synthetic State,Edge Case,85,12.0,70,edge_no_atm,synthetic_mock_data
+BankOnly Puram,BOP,Synthetic State,Edge Case,70,10.5,58,edge_bank_only,synthetic_mock_data
+Remote Gap Block,RGB,Synthetic State,Edge Case,62,14.0,75,edge_remote_high_distance,synthetic_mock_data

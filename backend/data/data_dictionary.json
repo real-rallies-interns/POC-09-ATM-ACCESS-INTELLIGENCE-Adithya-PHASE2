@@ -1,0 +1,171 @@
+{
+  "title": "Cash Access Intelligence Platform",
+  "synthetic_data_notice": "Every record is synthetic and created for academic PoC simulation. This is not official ATM or bank data.",
+  "entities": {
+    "AccessPoint": "Synthetic ATM or bank branch location used for map visualization and access scoring.",
+    "AreaProfile": "Synthetic demand, travel, and income friction profile used for intelligence scoring.",
+    "EdgeCase": "Synthetic unusual/error scenario used to test resilience."
+  },
+  "fields": {
+    "AccessPoint": [
+      "record_id",
+      "synthetic_label",
+      "name",
+      "type",
+      "operator",
+      "area",
+      "area_id",
+      "state",
+      "region",
+      "lat",
+      "lng",
+      "status",
+      "cash_availability",
+      "accessibility",
+      "road_access",
+      "source_type",
+      "scenario_label",
+      "data_label",
+      "notes"
+    ],
+    "AreaProfile": [
+      "area",
+      "area_id",
+      "state",
+      "region",
+      "populationPressure",
+      "travelBurden",
+      "incomeFriction",
+      "scenario_label",
+      "data_label"
+    ],
+    "EdgeCase": [
+      "edge_case_id",
+      "synthetic_label",
+      "area",
+      "issue_type",
+      "expected_behavior",
+      "data_label"
+    ]
+  },
+  "sample_rows": {
+    "access_points": [
+      {
+        "record_id": "SYN-AP-0001",
+        "synthetic_label": "SYNTHETIC_RECORD",
+        "name": "HDFC Bank ATM Delhi Zone 1",
+        "type": "ATM",
+        "operator": "HDFC Bank",
+        "area": "Delhi",
+        "area_id": "DEL",
+        "state": "Delhi",
+        "region": "North",
+        "lat": 28.550895,
+        "lng": 77.252087,
+        "status": "active",
+        "cash_availability": "high",
+        "accessibility": "24x7",
+        "road_access": "main_road",
+        "source_type": "mock_osm_style",
+        "scenario_label": "dense_metro",
+        "data_label": "synthetic_mock_data",
+        "notes": "Synthetic India-wide access point for academic PoC."
+      },
+      {
+        "record_id": "SYN-AP-0002",
+        "synthetic_label": "SYNTHETIC_RECORD",
+        "name": "ICICI Bank ATM Delhi Zone 2",
+        "type": "ATM",
+        "operator": "ICICI Bank",
+        "area": "Delhi",
+        "area_id": "DEL",
+        "state": "Delhi",
+        "region": "North",
+        "lat": 28.688777,
+        "lng": 77.28502,
+        "status": "active",
+        "cash_availability": "medium",
+        "accessibility": "24x7",
+        "road_access": "residential_road",
+        "source_type": "mock_osm_style",
+        "scenario_label": "dense_metro",
+        "data_label": "synthetic_mock_data",
+        "notes": "Synthetic India-wide access point for academic PoC."
+      },
+      {
+        "record_id": "SYN-AP-0003",
+        "synthetic_label": "SYNTHETIC_RECORD",
+        "name": "Union Bank ATM Delhi Zone 3",
+        "type": "ATM",
+        "operator": "Union Bank",
+        "area": "Delhi",
+        "area_id": "DEL",
+        "state": "Delhi",
+        "region": "North",
+        "lat": 28.581182,
+        "lng": 77.290424,
+        "status": "active",
+        "cash_availability": "medium",
+        "accessibility": "24x7",
+        "road_access": "rural_road",
+        "source_type": "mock_osm_style",
+        "scenario_label": "dense_metro",
+        "data_label": "synthetic_mock_data",
+        "notes": "Synthetic India-wide access point for academic PoC."
+      }
+    ],
+    "area_profiles": [
+      {
+        "area": "Delhi",
+        "area_id": "DEL",
+        "state": "Delhi",
+        "region": "North",
+        "populationPressure": 91,
+        "travelBurden": 4.8,
+        "incomeFriction": 42,
+        "scenario_label": "dense_metro",
+        "data_label": "synthetic_mock_data"
+      },
+      {
+        "area": "Mumbai",
+        "area_id": "MUM",
+        "state": "Maharashtra",
+        "region": "West",
+        "populationPressure": 94,
+        "travelBurden": 5.2,
+        "incomeFriction": 48,
+        "scenario_label": "dense_metro",
+        "data_label": "synthetic_mock_data"
+      },
+      {
+        "area": "Bengaluru",
+        "area_id": "BLR",
+        "state": "Karnataka",
+        "region": "South",
+        "populationPressure": 82,
+        "travelBurden": 4.1,
+        "incomeFriction": 36,
+        "scenario_label": "tech_metro",
+        "data_label": "synthetic_mock_data"
+      }
+    ],
+    "edge_cases": [
+      {
+        "edge_case_id": "EDGE-001",
+        "synthetic_label": "SYNTHETIC_EDGE_CASE",
+        "area": "ZeroATM Nagar",
+        "issue_type": "no_atm_available",
+        "expected_behavior": "Coverage should remain low and system should not crash when ATM count is zero.",
+        "data_label": "synthetic_mock_data"
+      },
+      {
+        "edge_case_id": "EDGE-002",
+        "synthetic_label": "SYNTHETIC_EDGE_CASE",
+        "area": "BankOnly Puram",
+        "issue_type": "bank_only_area",
+        "expected_behavior": "Bank count exists but nearest ATM burden should remain high.",
+        "data_label": "synthetic_mock_data"
+      }
+    ]
+  }
+}
