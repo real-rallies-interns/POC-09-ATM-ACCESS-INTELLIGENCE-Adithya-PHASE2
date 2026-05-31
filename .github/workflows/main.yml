@@ -25,21 +25,25 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Install Backend Dependencies
+      - name: Install QA Dependencies
         run: |
-          cd backend
-          pip install -r requirements.txt
+          pip install -r qa/requirements.txt
 
-      - name: Install Frontend Dependencies
+      - name: Start Services (Docker Compose)
         run: |
-          cd frontend
-          npm ci
+          docker-compose up -d --build
+          # Wait for services to be healthy
+          sleep 15 
 
       - name: Run E2E Tests (Logic Handshake)
         run: |
           echo "Running Selenium E2E suites to certify the Logic Handshake"
-          # Pytest execution will go here
-          
+          pytest qa/tests/test_e2e.py -v
+
+      - name: Stop Services
+        if: always()
+        run: docker-compose down
+
       - name: Infocreon Quality Gate
         run: |
           echo "Passed Infocreon Quality Gate"
@@ -49,6 +53,56 @@ jobs:
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
     steps:
-      - name: Deploy to Azure Container Apps (ACR/ACA)
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Log in to Azure Container Registry
         run: |
-          echo "Deploying to Azure Orchestration..."
+          az acr login --name atmacrregistryadithya
+
+      - name: Build and Push Backend Image
+        run: |
+          cd backend
+          docker build -t atmacrregistryadithya.azurecr.io/atm-backend:latest .
+          docker push atmacrregistryadithya.azurecr.io/atm-backend:latest
+
+      - name: Deploy Backend to Azure Container Apps
+        run: |
+          az containerapp create \
+            --name atm-backend \
+            --resource-group rg-atm-intelligence-2 \
+            --environment atm-container-env \
+            --image atmacrregistryadithya.azurecr.io/atm-backend:latest \
+            --target-port 8000 \
+            --ingress 'external' \
+            --registry-server atmacrregistryadithya.azurecr.io
+
+      - name: Get Backend URL
+        id: backend-url
+        run: |
+          FQDN=$(az containerapp show --name atm-backend --resource-group rg-atm-intelligence-2 --query properties.configuration.ingress.fqdn -o tsv)
+          echo "url=https://$FQDN" >> $GITHUB_OUTPUT
+
+      - name: Build and Push Frontend Image
+        run: |
+          cd frontend
+          docker build \
+            --build-arg NEXT_PUBLIC_API_URL=${{ steps.backend-url.outputs.url }} \
+            -t atmacrregistryadithya.azurecr.io/atm-frontend:latest .
+          docker push atmacrregistryadithya.azurecr.io/atm-frontend:latest
+
+      - name: Deploy Frontend to Azure Container Apps
+        run: |
+          az containerapp create \
+            --name atm-frontend \
+            --resource-group rg-atm-intelligence-2 \
+            --environment atm-container-env \
+            --image atmacrregistryadithya.azurecr.io/atm-frontend:latest \
+            --target-port 3000 \
+            --ingress 'external' \
+            --registry-server atmacrregistryadithya.azurecr.io

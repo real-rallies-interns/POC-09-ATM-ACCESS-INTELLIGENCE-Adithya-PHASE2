@@ -9,7 +9,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background: #030712;
+  background: #040508;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -22,54 +22,57 @@ input {
 
 .real-panel {
   background:
-    radial-gradient(circle at top left, rgba(34, 211, 238, 0.08), transparent 35%),
-    #06101d;
+    radial-gradient(circle at top left, rgba(0, 255, 135, 0.05), transparent 35%),
+    #0c110e;
 }
 
 .metric-card {
-  border: 1px solid rgba(34, 211, 238, 0.18);
-  background: rgba(8, 20, 33, 0.95);
+  border: 1px solid rgba(0, 255, 135, 0.15);
+  background: rgba(12, 17, 14, 0.92);
   border-radius: 16px;
   padding: 16px;
+  backdrop-filter: blur(8px);
 }
 
 .metric-card.danger {
-  border-color: rgba(248, 113, 113, 0.35);
+  border-color: rgba(239, 68, 68, 0.3);
 }
 
 .info-card {
-  border: 1px solid rgba(34, 211, 238, 0.18);
-  background: rgba(8, 20, 33, 0.95);
+  border: 1px solid rgba(0, 255, 135, 0.15);
+  background: rgba(12, 17, 14, 0.92);
   border-radius: 18px;
   padding: 16px;
+  backdrop-filter: blur(8px);
 }
 
 .info-card.danger {
-  border-color: rgba(248, 113, 113, 0.35);
+  border-color: rgba(239, 68, 68, 0.3);
 }
 
 .info-card.warning {
-  border-color: rgba(245, 158, 11, 0.35);
+  border-color: rgba(245, 158, 11, 0.3);
 }
 
 .info-card.success {
-  border-color: rgba(74, 222, 128, 0.35);
+  border-color: rgba(0, 255, 135, 0.3);
 }
 
 .shadow-glow {
-  box-shadow: 0 0 30px rgba(34, 211, 238, 0.09);
+  box-shadow: 0 0 30px rgba(0, 255, 135, 0.1);
 }
 
 .leaflet-container {
-  background: #030712;
+  background: #040508;
   transition: all 0.4s ease;
 }
 
 .leaflet-popup-content-wrapper,
 .leaflet-popup-tip {
-  background: #06101d;
+  background: #0c110e;
   color: white;
-  border: 1px solid rgba(34, 211, 238, 0.25);
+  border: 1px solid rgba(0, 255, 135, 0.25);
+  backdrop-filter: blur(8px);
 }
 
 .leaflet-popup-content {
@@ -78,11 +81,11 @@ input {
 }
 
 .atm-marker {
-  filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.9));
+  filter: drop-shadow(0 0 8px rgba(0, 255, 135, 0.95));
 }
 
 .bank-marker {
-  filter: drop-shadow(0 0 10px rgba(129, 140, 248, 0.95));
+  filter: drop-shadow(0 0 10px rgba(16, 185, 129, 0.95));
 }
 
 .pulse-circle {

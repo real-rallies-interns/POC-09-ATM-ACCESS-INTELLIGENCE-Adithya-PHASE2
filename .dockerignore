@@ -1,0 +1,12 @@
+**/node_modules
+**/.next
+**/out
+**/.git
+**/.gitignore
+**/*.log
+**/__pycache__
+**/*.pyc
+**/*.pyo
+**/.venv
+**/venv
+repomix-output.xml

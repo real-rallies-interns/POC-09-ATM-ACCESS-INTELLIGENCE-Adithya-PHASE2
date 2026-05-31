@@ -2,9 +2,9 @@
 
 # Infrastructure script for deploying to Azure Container Apps (ACA) and Azure Container Registry (ACR)
 
-RESOURCE_GROUP="rg-atm-intelligence"
-LOCATION="eastus"
-ACR_NAME="atmacrregistry"
+RESOURCE_GROUP="rg-atm-intelligence-2"
+LOCATION="centralindia"
+ACR_NAME="atmacrregistryadithya"
 ENV_NAME="atm-container-env"
 FRONTEND_APP="atm-frontend"
 BACKEND_APP="atm-backend"
